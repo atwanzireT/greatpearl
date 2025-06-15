@@ -167,7 +167,7 @@ const OurGreatPearlWays = () => {
                 <blockquote className="text-xl italic text-white mb-4">
                   GreatPearl doesn&rsquo;t just buy coffee—they help us protect our land and our future. Their support means we use sustainable methods that preserve our environment, and they stand by us to ensure fair treatment and lasting security for our families.
                 </blockquote>
-                <div className="text-yellow-200 font-medium">— Carlos Mendez, Coffee Farmer (Colombia)</div>
+                <div className="text-yellow-200 font-medium">— Fauza Kusa</div>
               </div>
             </div>
           </div>
