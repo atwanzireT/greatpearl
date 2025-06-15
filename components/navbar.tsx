@@ -182,7 +182,7 @@ const Navbar = () => {
                             {/* Enhanced Mobile CTA */}
                             <div className="pt-4 pb-4">
                                 <a
-                                    href="/contact"
+                                    href="/#contact"
                                     className="flex items-center justify-center w-full px-6 py-4 bg-gradient-to-r from-green-700 to-green-800 hover:from-green-800 hover:to-green-900 text-white font-bold rounded-2xl shadow-2xl hover:shadow-green-500/30 transform hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden"
                                     onClick={() => setIsOpen(false)}
                                 >
