@@ -158,7 +158,7 @@ const HeroSection = () => {
                     <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 opacity-80 hover:opacity-100 transition-opacity duration-300">
                         {[
                             { name: "Volcafe", src: "/clients/vol.png" },
-                            { name: "AgriEvolve", src: "/clients/agri.png" },
+                            { name: "AgriEvolve", src: "/clients/Agri.png" },
 
                         ].map((client, index) => (
                             <div
