@@ -152,7 +152,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Trust Indicators */}
-                <div className={`mt-20 text-center transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                {/* <div className={`mt-20 text-center transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                     }`}>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Trusted by leading businesses across Uganda</p>
                     <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 opacity-80 hover:opacity-100 transition-opacity duration-300">
@@ -176,7 +176,7 @@ const HeroSection = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )
