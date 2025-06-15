@@ -2,11 +2,11 @@
 
 import React from 'react'
 import { Target, BarChart2, Leaf, Globe, Coffee, Users, Award } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
 const StrategySection = () => {
-    // Animation variants
-    const containerVariants = {
+    // Animation variants with proper typing
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -17,14 +17,14 @@ const StrategySection = () => {
         }
     }
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { y: 20, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1,
             transition: {
                 duration: 0.5,
-                ease: "easeOut"
+                ease: [0.25, 0.1, 0.25, 1] // Using bezier curve instead of string
             }
         }
     }
@@ -62,28 +62,28 @@ const StrategySection = () => {
 
     const roadmap = [
         {
-            year: "2023",
+            year: "2015",
             title: "Foundation Built",
             description: "Established direct partnerships with Kasese coffee farmers",
             icon: Coffee,
             completed: true
         },
         {
-            year: "2024",
+            year: "2017",
             title: "Fair Trade Certified",
             description: "Achieved certification ensuring ethical sourcing standards",
             icon: Award,
             completed: true
         },
         {
-            year: "2025",
+            year: "Present",
             title: "Expansion Phase",
             description: "Scaling operations while maintaining quality and fairness",
             icon: Globe,
             current: true
         },
         {
-            year: "2026",
+            year: "Future",
             title: "Regional Impact",
             description: "Expanding to neighboring regions with same ethical model",
             icon: Leaf
@@ -162,14 +162,14 @@ const StrategySection = () => {
                     transition={{ duration: 0.5 }}
                 >
                     <div className="p-6 md:p-8 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/10 border-b border-green-100 dark:border-green-800/30">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Our Journey</h3>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Our 5 Year Journey</h3>
                         <p className="text-gray-600 dark:text-gray-300 text-sm">Building sustainable coffee partnerships step by step</p>
                     </div>
                     <div className="divide-y divide-gray-100 dark:divide-gray-800">
                         {roadmap.map((item, index) => (
                             <div key={index} className="p-6 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors duration-200">
                                 <div className="flex items-center gap-4">
-                                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold ${item.current
+                                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xs font-bold ${item.current
                                             ? 'bg-green-600 text-white'
                                             : item.completed
                                                 ? 'bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400'

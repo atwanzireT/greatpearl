@@ -24,9 +24,6 @@ const GreatPearlCoffee = () => {
       {/* Our Ways Section */}
       <OurGreatPearlWays/>
 
-      {/* Contact Us */}
-      <ContactUs/>
-
       {/* GreatPearl Ways (Additional Unique Section) */}
       <section id="ways" className="relative py-20 md:py-28 bg-gray-50 dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,40 +61,43 @@ const GreatPearlCoffee = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: Coffee,
-                title: "Small-Batch Roasting",
-                description: "Each batch is roasted to highlight unique flavor profiles, never mass-produced."
+              icon: Coffee,
+              title: "Batch Quality Analysis",
+              description: "Every batch is meticulously analyzed to highlight unique flavor profiles and ensure consistency."
               },
               {
-                icon: Globe,
-                title: "Direct Farm Relationships",
-                description: "We source directly from farmers, ensuring fair pay and premium quality."
+              icon: Globe,
+              title: "Direct Farm Relationships",
+              description: "We source directly from farmers, ensuring fair pay and premium quality."
               },
               {
-                icon: Heart,
-                title: "Craftsmanship in Every Cup",
-                description: "From bean selection to brewing, we obsess over every detail."
+              icon: Heart,
+              title: "Craftsmanship in Every Cup",
+              description: "From bean selection to brewing, we obsess over every detail."
               }
             ].map((item, index) => (
               <motion.div
-                key={index}
-                className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+              key={index}
+              className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
               >
-                <div className="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-green-600 dark:text-green-400" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+              <div className="w-12 h-12 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center mb-4">
+                <item.icon className="w-6 h-6 text-green-600 dark:text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Contact Us */}
+      <ContactUs/>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">

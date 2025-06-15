@@ -3,11 +3,11 @@
 import React from 'react'
 import Image from 'next/image'
 import { Coffee, Leaf, Mountain, Trophy, Globe, Heart } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
 const AboutSection = () => {
-    // Animation variants
-    const containerVariants = {
+    // Animation variants with proper typing
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -18,14 +18,14 @@ const AboutSection = () => {
         }
     }
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { y: 30, opacity: 0 },
         visible: {
             y: 0,
             opacity: 1,
             transition: {
                 duration: 0.6,
-                ease: "easeOut"
+                ease: [0.25, 0.1, 0.25, 1] // Using bezier curve instead of string
             }
         }
     }
@@ -33,18 +33,18 @@ const AboutSection = () => {
     const features = [
         {
             icon: Coffee,
-            title: "Single-Origin Beans",
-            description: "Sourced directly from ethical growers in premium coffee regions"
+            title: " Fair and competitive pricing",
+            description: "We offer farmers honest, competitive prices to support sustainable livelihoods."
         },
         {
             icon: Leaf,
-            title: "Sustainable Practices",
-            description: "Eco-friendly farming and fair trade partnerships"
+            title: "Strict quality control",
+            description: "Every batch is carefully inspected to ensure consistent, top-grade coffee."
         },
         {
             icon: Trophy,
-            title: "Award-Winning Blends",
-            description: "Recognized by international coffee associations"
+            title: "Ongoing technical support",
+            description: "We provide continuous training and advice to help farmers grow better, healthier coffee."
         }
     ]
 
@@ -90,7 +90,7 @@ const AboutSection = () => {
                     <motion.div className="space-y-6" variants={containerVariants}>
                         <motion.div variants={itemVariants}>
                             <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium">
-                                Our Heritage
+                                Our Story
                             </span>
                         </motion.div>
 
@@ -98,23 +98,22 @@ const AboutSection = () => {
                             className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
                             variants={itemVariants}
                         >
-                            Crafting Excellence Since <span className="text-green-600 dark:text-green-400">1985</span>
+                            Crafting Excellence Since <span className="text-green-600 dark:text-green-400">2015</span>
                         </motion.h2>
 
                         <motion.p
                             className="text-lg text-gray-600 dark:text-gray-300"
                             variants={itemVariants}
                         >
-                            Great Pearl Coffee began as a small family-owned farm in the highlands of Colombia. What started as a passion project between generations has grown into an internationally recognized brand, while maintaining our commitment to artisanal quality.
+                            Great Pearl Coffee Factory specializes in high-quality Ugandan Robusta & Arabica coffee, serving as an ethical bridge between farmers and global markets. Through sustainable practices, farmer training, and fair pricing, we ensure traceable, premium beans while supporting agricultural communities.
                         </motion.p>
 
                         <motion.p
                             className="text-lg text-gray-600 dark:text-gray-300"
                             variants={itemVariants}
                         >
-                            Today, we continue the tradition of hand-selecting only the finest Arabica beans, roasting in small batches to exacting standards, and delivering an exceptional coffee experience to discerning customers worldwide.
+                            Utilizing modern milling technology and strict quality controls, we meet international standards (including EUDR compliance) for all coffee exports. Whether for bulk commercial orders or specialty micro-lots, we deliver Uganda&rsquo;s finest coffee with consistent excellence.
                         </motion.p>
-
                         {/* Features */}
                         <motion.div
                             className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-4 pt-4"
@@ -132,8 +131,8 @@ const AboutSection = () => {
                                             <feature.icon className="w-6 h-6 text-green-600 dark:text-green-400" />
                                         </div>
                                         <div>
-                                            <h3 className="font-medium text-gray-900 dark:text-white text-lg">{feature.title}</h3>
-                                            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{feature.description}</p>
+                                            <h3 className="font-medium text-gray-900 dark:text-white text-sm">{feature.title}</h3>
+                                            <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">{feature.description}</p>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -158,7 +157,7 @@ const AboutSection = () => {
                             Our Mission: Elevating Coffee Culture
                         </h3>
                         <p className="text-lg text-green-100 mb-8">
-                            At Great Pearl, we believe coffee should be an experience, not just a beverage. We're dedicated to preserving traditional roasting methods while innovating to meet modern tastes, creating moments of connection through every cup.
+                            To connect Uganda&rsquo;s coffee farmers to global markets by processing high-quality, traceable, and sustainable coffee—empowering communities, upholding ethical standards, and delivering excellence in every bean.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <div className="px-6 py-3 bg-white text-green-700 font-medium rounded-lg shadow-md hover:bg-green-50 transition-colors">

@@ -121,7 +121,7 @@ const Navbar = () => {
                                 {/* Enhanced Premium CTA Button */}
                                 <div className="ml-6">
                                     <a
-                                        href="/contact"
+                                        href="/#contact"
                                         className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-700 to-green-800 dark:from-green-600 dark:to-green-700 hover:from-green-800 hover:to-green-900 dark:hover:from-green-700 dark:hover:to-green-800 text-white font-bold rounded-2xl shadow-2xl hover:shadow-green-500/30 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 group relative overflow-hidden"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

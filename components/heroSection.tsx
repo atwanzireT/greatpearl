@@ -12,7 +12,7 @@ const HeroSection = () => {
     }, [])
 
     return (
-        <section className="relative min-h-screen flex items-center pt-10 pb-10 overflow-hidden">
+        <section id="#" className="relative min-h-screen flex items-center pt-10 pb-10 overflow-hidden">
             {/* Background Image with Blur */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0">
@@ -46,17 +46,17 @@ const HeroSection = () => {
 
                         {/* Main Headline */}
                         <h1 className="text-5xl lg:text-4xl font-black mb-6 leading-[0.9]">
-                            <span className="text-gray-900 dark:text-white">Premium</span>
+                            <span className="text-gray-900 dark:text-white">From Uganda’s </span>
                             <br />
                             <span className="bg-gradient-to-r from-green-600 to-yellow-600 dark:from-green-400 dark:to-yellow-400 bg-clip-text text-transparent">
-                                Coffee Solutions
+                                Heart to the World&rsquo;s Cup
                             </span>
                         </h1>
 
                         {/* Value Proposition */}
                         <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl">
-                            Direct from <strong className="text-green-700 dark:text-green-400">Rwenzori Local farmers</strong> to your business.
-                            Fair prices, premium quality, ethical sourcing.
+                            At <strong className="text-green-700 dark:text-green-400">Great Pearl Coffee Factory </strong>
+                            we specialize in premium Robusta and Arabica coffee—traceable, sustainable, and expertly processed to meet global standards. Trusted by farmers. Preferred by roasters.
                         </p>
 
                         {/* CTA Buttons */}
@@ -159,7 +159,7 @@ const HeroSection = () => {
                         {[
                             { name: "Volcafe", src: "/clients/vol.png" },
                             { name: "AgriEvolve", src: "/clients/agri.png" },
-                           
+
                         ].map((client, index) => (
                             <div
                                 key={index}

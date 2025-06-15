@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 const OurGreatPearlWays = () => {
   return (
-    <section id="our-ways" className="relative py-20 md:py-28 bg-white dark:bg-gray-900">
+    <section id="ways" className="relative py-20 md:py-28 bg-white dark:bg-gray-900">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 dark:opacity-[3%]">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-yellow-300 blur-3xl"></div>
@@ -102,7 +102,7 @@ const OurGreatPearlWays = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-yellow-500 mr-2">•</span>
-                    <span>Small-batch roasting</span>
+                    <span>Rigorous sample cupping for every lot</span>
                   </li>
                 </ul>
               </div>
@@ -130,15 +130,15 @@ const OurGreatPearlWays = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="p-3 bg-yellow-50/50 dark:bg-yellow-900/10 rounded-lg">
                 <div className="text-green-600 dark:text-green-400 font-bold text-lg">5%</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">To local schools</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400">To Local Farmer Trainings</div>
               </div>
               <div className="p-3 bg-yellow-50/50 dark:bg-yellow-900/10 rounded-lg">
                 <div className="text-green-600 dark:text-green-400 font-bold text-lg">3%</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">To clean water</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400">For Local Farmer programs</div>
               </div>
               <div className="p-3 bg-yellow-50/50 dark:bg-yellow-900/10 rounded-lg">
                 <div className="text-green-600 dark:text-green-400 font-bold text-lg">2%</div>
-                <div className="text-xs text-gray-600 dark:text-gray-400">To healthcare</div>
+                <div className="text-xs text-gray-600 dark:text-gray-400">To Local Farmer Initiatives</div>
               </div>
               <div className="p-3 bg-yellow-50/50 dark:bg-yellow-900/10 rounded-lg">
                 <div className="text-green-600 dark:text-green-400 font-bold text-lg">10+</div>
@@ -165,7 +165,7 @@ const OurGreatPearlWays = () => {
               </div>
               <div>
                 <blockquote className="text-xl italic text-white mb-4">
-                  "GreatPearl didn't just buy our coffee—they transformed our village. With their support, we built a school and tripled our yields using sustainable methods."
+                  GreatPearl doesn&rsquo;t just buy coffee—they help us protect our land and our future. Their support means we use sustainable methods that preserve our environment, and they stand by us to ensure fair treatment and lasting security for our families.
                 </blockquote>
                 <div className="text-yellow-200 font-medium">— Carlos Mendez, Coffee Farmer (Colombia)</div>
               </div>
@@ -173,33 +173,6 @@ const OurGreatPearlWays = () => {
           </div>
           <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-yellow-500/20 blur-2xl"></div>
           <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-yellow-400/20 blur-2xl"></div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            Join Us in Redefining Coffee
-          </h3>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#"
-              className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg shadow-lg hover:shadow-green-200/50 dark:hover:shadow-green-700/20 transition-all duration-300 flex items-center justify-center"
-            >
-              Meet Our Farmers
-            </a>
-            <a
-              href="#"
-              className="px-8 py-3 border border-green-200 dark:border-green-700 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/30 font-medium rounded-lg transition-all duration-300 flex items-center justify-center"
-            >
-              See Our Impact Report
-            </a>
-          </div>
         </motion.div>
       </div>
     </section>
