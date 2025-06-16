@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Menu, X, Coffee, Mail, ChevronRight, Briefcase, Target, Sun, Moon, Phone, MapPin } from 'lucide-react'
+import Link from 'next/link'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -198,7 +199,7 @@ const Navbar = () => {
                             {navItems.map((item, index) => {
                                 const Icon = item.icon
                                 return (
-                                    <a
+                                    <Link
                                         key={item.name}
                                         href={item.href}
                                         className="flex items-center px-3 sm:px-5 py-3 sm:py-4 rounded-lg sm:rounded-xl text-gray-700 dark:text-gray-300 hover:text-green-800 dark:hover:text-green-400 hover:bg-white/70 dark:hover:bg-gray-700/50 font-semibold transition-all duration-300 group transform hover:scale-105 text-sm sm:text-base"
@@ -212,13 +213,13 @@ const Navbar = () => {
                                             <span className="tracking-wide flex-1">{item.name}</span>
                                             <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 dark:text-gray-500 group-hover:text-green-600 dark:group-hover:text-green-400 transform group-hover:translate-x-2 transition-all duration-300" />
                                         </div>
-                                    </a>
+                                    </Link>
                                 )
                             })}
 
                             {/* Enhanced Mobile CTA */}
                             <div className="pt-3 sm:pt-4 pb-3 sm:pb-4">
-                                <a
+                                <Link
                                     href="/#contact"
                                     className="flex items-center justify-center w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-green-700 to-green-800 hover:from-green-800 hover:to-green-900 text-white font-bold rounded-lg sm:rounded-2xl shadow-xl sm:shadow-2xl hover:shadow-green-500/30 transform hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden text-sm sm:text-base"
                                     onClick={() => setIsOpen(false)}
@@ -226,28 +227,28 @@ const Navbar = () => {
                                     <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:scale-110 transition-transform duration-300 relative z-10" />
                                     <span className="relative z-10 tracking-wide">Get Quote</span>
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Additional mobile-only quick actions */}
                             <div className="pt-2 sm:pt-4 border-t border-green-200/50 dark:border-green-700/30">
                                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                                    <a
+                                    <Link
                                         href="tel:+1234567890"
                                         className="flex items-center justify-center px-3 py-2 sm:py-3 bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-lg transition-all duration-300 text-xs sm:text-sm font-medium"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                                         Call Us
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         href="#location"
                                         className="flex items-center justify-center px-3 py-2 sm:py-3 bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-lg transition-all duration-300 text-xs sm:text-sm font-medium"
                                         onClick={() => setIsOpen(false)}
                                     >
                                         <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                                         Location
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

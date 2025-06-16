@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Coffee, ArrowRight, Star, Users, Award, Leaf } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const HeroSection = () => {
     const [isVisible, setIsVisible] = useState(false)
@@ -61,20 +62,20 @@ const HeroSection = () => {
 
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                            <a
+                            <Link
                                 href="#contact"
                                 className="group inline-flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
                             >
                                 Get Wholesale Quote
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </a>
+                            </Link>
 
-                            <a
-                                href="#contact"
+                            <Link
+                                href="insterest"
                                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-green-200 dark:border-green-700 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 font-semibold rounded-xl transition-all duration-300"
                             >
                                 Request Samples
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Social Proof Stats */}
