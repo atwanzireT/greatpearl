@@ -41,7 +41,7 @@ const HeroSection = () => {
                         {/* Trust Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full border border-green-200 dark:border-green-700/30 shadow-sm mb-8">
                             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                            <span className="text-sm font-medium text-green-700 dark:text-green-400">Trusted by 1000+ Businesses</span>
+                            <span className="text-sm font-medium text-green-700 dark:text-green-400">Trusted by 1000+ Farmers</span>
                         </div>
 
                         {/* Main Headline */}
@@ -62,7 +62,7 @@ const HeroSection = () => {
                         {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row gap-4 mb-12">
                             <a
-                                href="#quote"
+                                href="#contact"
                                 className="group inline-flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-green-500/25 transition-all duration-300 transform hover:-translate-y-0.5"
                             >
                                 Get Wholesale Quote
@@ -70,7 +70,7 @@ const HeroSection = () => {
                             </a>
 
                             <a
-                                href="#samples"
+                                href="#contact"
                                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-green-200 dark:border-green-700 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 font-semibold rounded-xl transition-all duration-300"
                             >
                                 Request Samples
@@ -84,7 +84,7 @@ const HeroSection = () => {
                                 <div className="text-sm text-gray-600 dark:text-gray-400">Happy Clients</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">10 Years</div>
+                                <div className="text-2xl font-bold text-gray-900 dark:text-white mb-1">10+ Years</div>
                                 <div className="text-sm text-gray-600 dark:text-gray-400">Experience</div>
                             </div>
                             <div className="text-center">
