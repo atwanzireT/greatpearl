@@ -188,7 +188,7 @@ const StrategySection = () => {
                         </p>
                         <div className="grid grid-cols-3 gap-4">
                             <div className="bg-white/10 p-3 rounded-lg">
-                                <div className="text-xl font-bold text-white">200+</div>
+                                <div className="text-xl font-bold text-white">3200+</div>
                                 <div className="text-xs text-green-100">Farmers</div>
                             </div>
                             <div className="bg-white/10 p-3 rounded-lg">

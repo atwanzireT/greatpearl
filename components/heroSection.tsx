@@ -61,7 +61,7 @@ const HeroSection = () => {
                                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </Link>
                             <Link
-                                href="interest"
+                                href="insterest"
                                 className="flex items-center justify-center px-6 py-3 border-2 border-green-200 dark:border-green-700 text-green-700 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 font-semibold rounded-lg transition-all"
                             >
                                 Request Samples
