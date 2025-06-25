@@ -1,19 +1,15 @@
 'use client'
 
 import React from 'react'
-import { Target, BarChart2, Leaf, Globe, Coffee, Users, Award } from 'lucide-react'
+import { Coffee, Leaf, Users, BarChart2, Award, Globe } from 'lucide-react'
 import { motion, Variants } from 'framer-motion'
 
 const StrategySection = () => {
-    // Animation variants with proper typing
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.2
-            }
+            transition: { staggerChildren: 0.1, delayChildren: 0.2 }
         }
     }
 
@@ -22,10 +18,7 @@ const StrategySection = () => {
         visible: {
             y: 0,
             opacity: 1,
-            transition: {
-                duration: 0.5,
-                ease: [0.25, 0.1, 0.25, 1] // Using bezier curve instead of string
-            }
+            transition: { duration: 0.5 }
         }
     }
 
@@ -33,202 +26,181 @@ const StrategySection = () => {
         {
             icon: Coffee,
             title: "Direct Sourcing",
-            description: "Partnering directly with farmers in Kasese for premium quality beans",
+            description: "Partnering directly with Kasese farmers",
             stats: "100% Fair Trade",
-            color: "bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400"
+            color: "green"
         },
         {
             icon: Leaf,
-            title: "Sustainable Practices",
-            description: "Eco-friendly processing and ethical farming partnerships",
+            title: "Sustainability",
+            description: "Eco-friendly processing",
             stats: "Zero Waste Goal",
-            color: "bg-emerald-100 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400"
+            color: "emerald"
         },
         {
             icon: Users,
-            title: "Farmer Empowerment",
-            description: "Fair pricing that eliminates exploitative middlemen",
-            stats: "200+ Farmers Supported",
-            color: "bg-teal-100 dark:bg-teal-900/20 text-teal-700 dark:text-teal-400"
+            title: "Farmer Support",
+            description: "Fair pricing, no middlemen",
+            stats: "200+ Farmers",
+            color: "teal"
         },
         {
             icon: BarChart2,
-            title: "Quality Excellence",
-            description: "Premium milling process preserving bean integrity",
+            title: "Quality Focus",
+            description: "Premium milling process",
             stats: "Grade A Certified",
-            color: "bg-yellow-100 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-400"
+            color: "yellow"
         }
     ]
 
     const roadmap = [
         {
             year: "2015",
-            title: "Foundation Built",
-            description: "Established direct partnerships with Kasese coffee farmers",
+            title: "Founded",
+            description: "Began farmer partnerships",
             icon: Coffee,
             completed: true
         },
         {
             year: "2017",
-            title: "Fair Trade Certified",
-            description: "Achieved certification ensuring ethical sourcing standards",
+            title: "Certified",
+            description: "Achieved Fair Trade status",
             icon: Award,
             completed: true
         },
         {
-            year: "Present",
-            title: "Expansion Phase",
-            description: "Scaling operations while maintaining quality and fairness",
+            year: "Now",
+            title: "Expanding",
+            description: "Scaling operations",
             icon: Globe,
             current: true
         },
         {
-            year: "Future",
-            title: "Regional Impact",
-            description: "Expanding to neighboring regions with same ethical model",
+            year: "Next",
+            title: "Regional Growth",
+            description: "Expanding to new areas",
             icon: Leaf
         }
     ]
 
     return (
-        <section id="strategy" className="relative py-16 md:py-24 bg-gray-50 dark:bg-gray-950">
-            {/* Simplified decorative elements */}
-            <div className="absolute inset-0 overflow-hidden opacity-5 dark:opacity-3">
-                <div className="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-green-400 blur-3xl"></div>
-                <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-yellow-400 blur-3xl"></div>
-            </div>
-
-            <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Simplified Header */}
+        <section id="strategy" className="relative py-16 bg-gray-50 dark:bg-gray-950">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header */}
                 <motion.div
                     className="text-center mb-12"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true }}
                     variants={containerVariants}
                 >
                     <motion.div variants={itemVariants}>
-                        <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium mb-3">
+                        <span className="inline-block px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm mb-3">
                             Our Approach
                         </span>
                     </motion.div>
-                    <motion.h2
-                        className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3"
-                        variants={itemVariants}
-                    >
+                    <motion.h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3" variants={itemVariants}>
                         Empowering Coffee <span className="text-green-600 dark:text-green-400">Communities</span>
                     </motion.h2>
-                    <motion.p
-                        className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
-                        variants={itemVariants}
-                    >
-                        Our strategy focuses on direct partnerships, fair pricing, and sustainable practices that benefit both farmers and coffee lovers.
+                    <motion.p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto" variants={itemVariants}>
+                        Ethical sourcing, fair pricing, and sustainable practices.
                     </motion.p>
                 </motion.div>
 
-                {/* Cleaner Strategy Pillars */}
+                {/* Strategy Cards */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true }}
                     variants={containerVariants}
                 >
                     {strategyPillars.map((pillar, index) => (
                         <motion.div
                             key={index}
-                            className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md transition-all duration-300"
+                            className="bg-white dark:bg-gray-900 rounded-lg p-5 shadow-sm border border-gray-100 dark:border-gray-800"
                             variants={itemVariants}
-                            whileHover={{ y: -3, transition: { duration: 0.2 } }}
+                            whileHover={{ y: -3 }}
                         >
-                            <div className={`w-10 h-10 rounded-lg ${pillar.color} flex items-center justify-center mb-4`}>
-                                <pillar.icon className="w-5 h-5" />
+                            <div className={`w-9 h-9 rounded-lg bg-${pillar.color}-100 dark:bg-${pillar.color}-900/20 text-${pillar.color}-600 dark:text-${pillar.color}-400 flex items-center justify-center mb-3`}>
+                                <pillar.icon className="w-4 h-4" />
                             </div>
-                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{pillar.title}</h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm mb-3 leading-relaxed">{pillar.description}</p>
-                            <div className="text-xs font-medium px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 inline-block">
+                            <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{pillar.title}</h3>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">{pillar.description}</p>
+                            <span className="text-xs font-medium px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
                                 {pillar.stats}
-                            </div>
+                            </span>
                         </motion.div>
                     ))}
                 </motion.div>
 
-                {/* Simplified Roadmap */}
+                {/* Roadmap */}
                 <motion.div
-                    className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm overflow-hidden border border-gray-100 dark:border-gray-800"
-                    initial={{ opacity: 0, y: 30 }}
+                    className="bg-white dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden border border-gray-100 dark:border-gray-800 mb-16"
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
                 >
-                    <div className="p-6 md:p-8 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/10 border-b border-green-100 dark:border-green-800/30">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Our 5 Year Journey</h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm">Building sustainable coffee partnerships step by step</p>
+                    <div className="p-6 bg-green-50 dark:bg-green-900/10 border-b border-green-100 dark:border-green-800/30">
+                        <h3 className="font-bold text-gray-900 dark:text-white">Our Journey</h3>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm">Sustainable growth timeline</p>
                     </div>
                     <div className="divide-y divide-gray-100 dark:divide-gray-800">
                         {roadmap.map((item, index) => (
-                            <div key={index} className="p-6 hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors duration-200">
-                                <div className="flex items-center gap-4">
-                                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xs font-bold ${item.current
-                                            ? 'bg-green-600 text-white'
-                                            : item.completed
-                                                ? 'bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400'
-                                                : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
-                                        }`}>
+                            <div key={index} className="p-5 hover:bg-gray-50 dark:hover:bg-gray-800/30">
+                                <div className="flex gap-4 items-center">
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold ${
+                                        item.current ? 'bg-green-600 text-white' :
+                                        item.completed ? 'bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400' :
+                                        'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
+                                    }`}>
                                         {item.year}
                                     </div>
-                                    <div className="flex-grow min-w-0">
-                                        <div className="flex items-center gap-2 mb-1">
-                                            <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h4>
+                                    <div className="flex-grow">
+                                        <div className="flex items-center gap-2">
+                                            <h4 className="font-semibold text-gray-900 dark:text-white">{item.title}</h4>
                                             {item.current && (
-                                                <span className="px-2 py-0.5 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full">
+                                                <span className="px-2 py-0.5 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full">
                                                     Current
                                                 </span>
                                             )}
                                         </div>
                                         <p className="text-gray-600 dark:text-gray-300 text-sm">{item.description}</p>
                                     </div>
-                                    <div className="w-8 h-8 rounded-lg bg-green-100/50 dark:bg-green-900/20 flex items-center justify-center">
-                                        <item.icon className="w-4 h-4 text-green-600 dark:text-green-400" />
-                                    </div>
+                                    <item.icon className="w-4 h-4 text-green-600 dark:text-green-400" />
                                 </div>
                             </div>
                         ))}
                     </div>
                 </motion.div>
 
-                {/* Simplified Impact Section */}
+                {/* Impact */}
                 <motion.div
-                    className="mt-16 bg-gradient-to-br from-green-600 to-green-700 dark:from-green-700 dark:to-green-800 rounded-2xl p-8 md:p-10 shadow-lg overflow-hidden"
+                    className="bg-gradient-to-br from-green-600 to-green-700 dark:from-green-700 dark:to-green-800 rounded-xl p-8 shadow-lg"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
                 >
-                    <div className="relative z-10 max-w-4xl mx-auto text-center">
-                        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                            Making a Real Difference
-                        </h3>
-                        <p className="text-green-100 mb-8 text-lg max-w-2xl mx-auto">
-                            By eliminating middlemen and ensuring fair prices, we're creating sustainable livelihoods for coffee farmers while delivering exceptional quality to our customers.
+                    <div className="text-center max-w-2xl mx-auto">
+                        <h3 className="text-2xl font-bold text-white mb-3">Making a Difference</h3>
+                        <p className="text-green-100 mb-6">
+                            Fair prices for farmers, exceptional quality for customers.
                         </p>
-                        <div className="grid grid-cols-3 gap-6 max-w-lg mx-auto">
-                            <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                                <div className="text-2xl font-bold text-white mb-1">200+</div>
-                                <div className="text-xs text-green-100">Farmers Supported</div>
+                        <div className="grid grid-cols-3 gap-4">
+                            <div className="bg-white/10 p-3 rounded-lg">
+                                <div className="text-xl font-bold text-white">200+</div>
+                                <div className="text-xs text-green-100">Farmers</div>
                             </div>
-                            <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                                <div className="text-2xl font-bold text-white mb-1">Fair</div>
-                                <div className="text-xs text-green-100">Pricing Always</div>
+                            <div className="bg-white/10 p-3 rounded-lg">
+                                <div className="text-xl font-bold text-white">Fair</div>
+                                <div className="text-xs text-green-100">Pricing</div>
                             </div>
-                            <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                                <div className="text-2xl font-bold text-white mb-1">100%</div>
-                                <div className="text-xs text-green-100">Quality Grade A</div>
+                            <div className="bg-white/10 p-3 rounded-lg">
+                                <div className="text-xl font-bold text-white">100%</div>
+                                <div className="text-xs text-green-100">Grade A</div>
                             </div>
                         </div>
                     </div>
-                    <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-yellow-400/20 blur-2xl"></div>
-                    <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-green-400/20 blur-2xl"></div>
                 </motion.div>
             </div>
         </section>
