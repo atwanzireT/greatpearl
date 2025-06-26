@@ -89,22 +89,22 @@ const StrategySection = () => {
         {
             src: "/images/img-1.jpeg",
             alt: "Coffee farm in Kasese",
-            caption: "Our partner farmers in Kasese"
+            caption: "Coffee Farm in Kasese"
         },
         {
             src: "/images/factory-2.jpeg",
             alt: "Our Coffee Stores",
-            caption: "Sustainable harvesting practices"
+            caption: "Our Coffee Stores"
         },
         {
             src: "/images/factory-1.jpg",
             alt: "Coffee processing Facility",
-            caption: "Quality processing facilities"
+            caption: "Quality processing facility"
         },
         {
             src: "/images/img-6.jpeg",
             alt: "Premium coffee beans",
-            caption: "Grade A coffee beans"
+            caption: "Premium coffee beans"
         }
     ]
 
