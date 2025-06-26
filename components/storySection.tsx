@@ -63,7 +63,7 @@ const AboutSection = () => {
                         variants={itemVariants}
                     >
                         <Image
-                            src="/images/hero.jpg"
+                            src="/images/factory.jpeg"
                             alt="Great Pearl Coffee Farm"
                             fill
                             className="object-cover"
@@ -145,7 +145,7 @@ const AboutSection = () => {
                         </p>
                         <div className="flex flex-wrap justify-center gap-3">
                             <button className="px-4 py-2 bg-white text-green-700 font-medium rounded-lg shadow">
-                                Meet Our Farmers
+                                Farmers Support
                             </button>
                             <button className="px-4 py-2 border border-white text-white rounded-lg">
                                 Sustainability

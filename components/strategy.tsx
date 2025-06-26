@@ -3,6 +3,7 @@
 import React from 'react'
 import { Coffee, Leaf, Users, BarChart2, Award, Globe } from 'lucide-react'
 import { motion, Variants } from 'framer-motion'
+import Image from 'next/image'
 
 const StrategySection = () => {
     const containerVariants: Variants = {
@@ -83,6 +84,30 @@ const StrategySection = () => {
         }
     ]
 
+    // Gallery images data
+    const galleryImages = [
+        {
+            src: "/images/img-1.jpeg",
+            alt: "Coffee farm in Kasese",
+            caption: "Our partner farmers in Kasese"
+        },
+        {
+            src: "/images/factory-2.jpeg",
+            alt: "Our Coffee Stores",
+            caption: "Sustainable harvesting practices"
+        },
+        {
+            src: "/images/factory-1.jpg",
+            alt: "Coffee processing Facility",
+            caption: "Quality processing facilities"
+        },
+        {
+            src: "/images/img-6.jpeg",
+            alt: "Premium coffee beans",
+            caption: "Grade A coffee beans"
+        }
+    ]
+
     return (
         <section id="strategy" className="relative py-16 bg-gray-50 dark:bg-gray-950">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,6 +157,40 @@ const StrategySection = () => {
                             </span>
                         </motion.div>
                     ))}
+                </motion.div>
+
+                {/* Photo Gallery */}
+                <motion.div 
+                    className="mb-16"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">Our Coffee Journey in Pictures</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        {galleryImages.map((image, index) => (
+                            <motion.div 
+                                key={index}
+                                className="group relative overflow-hidden rounded-lg shadow-md"
+                                whileHover={{ scale: 1.03 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <div className="aspect-w-4 aspect-h-3">
+                                    <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        width={400}
+                                        height={300}
+                                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p className="text-white text-sm">{image.caption}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </motion.div>
 
                 {/* Roadmap */}
