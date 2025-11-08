@@ -245,7 +245,7 @@ const RequestSamplesPage = () => {
                 >
                   <option value="Arabica">Arabica</option>
                   <option value="Robusta">Robusta</option>
-                  <option value="Wugari">Wugari</option>
+                  <option value="Specialized Coffee">Specialized Coffee</option>
                 </select>
               </div>
               
