@@ -105,7 +105,62 @@ const StrategySection = () => {
             src: "/images/img-6.jpeg",
             alt: "Premium coffee beans",
             caption: "Premium coffee beans"
-        }
+        },
+        {
+            src: "/images/IMG_2427.JPG",
+            alt: "Staff at work",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2428.JPG",
+            alt: "Staff at work",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2437.JPG",
+            alt: "Our Supervisor and Field Officer",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2440.JPG",
+            alt: "Our Managing Director",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2441.JPG",
+            alt: "Staff at work",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2464.JPG",
+            alt: "Our Managing Director",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2478.JPG",
+            alt: "The Quality Officer",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2516.JPG",
+            alt: "The Hulking Machine Operator",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2521.JPG",
+            alt: "The Quality Head",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2531.JPG",
+            alt: "The Quality Officer",
+            caption: "Staff at work"
+        },
+        {
+            src: "/images/IMG_2538.JPG",
+            alt: "The Hulking Machine Operator",
+            caption: "Staff at work"
+        },
     ]
 
     return (
@@ -160,7 +215,7 @@ const StrategySection = () => {
                 </motion.div>
 
                 {/* Photo Gallery */}
-                <motion.div 
+                <motion.div
                     className="mb-16"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -170,7 +225,7 @@ const StrategySection = () => {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">Our Coffee Journey in Pictures</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {galleryImages.map((image, index) => (
-                            <motion.div 
+                            <motion.div
                                 key={index}
                                 className="group relative overflow-hidden rounded-lg shadow-md"
                                 whileHover={{ scale: 1.03 }}
@@ -208,11 +263,10 @@ const StrategySection = () => {
                         {roadmap.map((item, index) => (
                             <div key={index} className="p-5 hover:bg-gray-50 dark:hover:bg-gray-800/30">
                                 <div className="flex gap-4 items-center">
-                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold ${
-                                        item.current ? 'bg-green-600 text-white' :
-                                        item.completed ? 'bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400' :
-                                        'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
-                                    }`}>
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold ${item.current ? 'bg-green-600 text-white' :
+                                            item.completed ? 'bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400' :
+                                                'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
+                                        }`}>
                                         {item.year}
                                     </div>
                                     <div className="flex-grow">
