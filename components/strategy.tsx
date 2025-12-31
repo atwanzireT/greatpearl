@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Coffee, Leaf, Users, BarChart2, Award, Globe, X, ChevronLeft, ChevronRight, ZoomIn, Filter } from 'lucide-react'
 import { motion, Variants, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
@@ -34,28 +34,32 @@ const StrategySection = () => {
             title: "Direct Sourcing",
             description: "Partnering directly with Kasese farmers",
             stats: "100% Fair Trade",
-            color: "green"
+            bgColor: "bg-green-100 dark:bg-green-900/20",
+            textColor: "text-green-600 dark:text-green-400"
         },
         {
             icon: Leaf,
             title: "Sustainability",
             description: "Eco-friendly processing",
             stats: "Zero Waste Goal",
-            color: "emerald"
+            bgColor: "bg-emerald-100 dark:bg-emerald-900/20",
+            textColor: "text-emerald-600 dark:text-emerald-400"
         },
         {
             icon: Users,
             title: "Farmer Support",
             description: "Fair pricing, no middlemen",
             stats: "200+ Farmers",
-            color: "teal"
+            bgColor: "bg-teal-100 dark:bg-teal-900/20",
+            textColor: "text-teal-600 dark:text-teal-400"
         },
         {
             icon: BarChart2,
             title: "Quality Focus",
             description: "Premium milling process",
             stats: "Grade A Certified",
-            color: "yellow"
+            bgColor: "bg-yellow-100 dark:bg-yellow-900/20",
+            textColor: "text-yellow-600 dark:text-yellow-400"
         }
     ]
 
@@ -241,7 +245,7 @@ const StrategySection = () => {
     }
 
     // Handle keyboard navigation
-    React.useEffect(() => {
+    useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (selectedImage === null) return
             
@@ -297,7 +301,7 @@ const StrategySection = () => {
                             variants={itemVariants}
                             whileHover={{ y: -3 }}
                         >
-                            <div className={`w-9 h-9 rounded-lg bg-${pillar.color}-100 dark:bg-${pillar.color}-900/20 text-${pillar.color}-600 dark:text-${pillar.color}-400 flex items-center justify-center mb-3`}>
+                            <div className={`w-9 h-9 rounded-lg ${pillar.bgColor} ${pillar.textColor} flex items-center justify-center mb-3`}>
                                 <pillar.icon className="w-4 h-4" />
                             </div>
                             <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{pillar.title}</h3>
@@ -328,13 +332,13 @@ const StrategySection = () => {
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <div className="aspect-w-16 aspect-h-9">
+                                <div className="relative h-64 w-full">
                                     <Image
                                         src={image.src}
                                         alt={image.alt}
-                                        width={600}
-                                        height={400}
-                                        className="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-110"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -399,13 +403,13 @@ const StrategySection = () => {
                                     className="group relative overflow-hidden rounded-lg shadow-md bg-white dark:bg-gray-900"
                                     whileHover={{ scale: 1.03 }}
                                 >
-                                    <div className="aspect-w-4 aspect-h-3">
+                                    <div className="relative h-64 w-full">
                                         <Image
                                             src={image.src}
                                             alt={image.alt}
-                                            width={400}
-                                            height={300}
-                                            className="object-cover w-full h-64 transition-transform duration-500 group-hover:scale-110 cursor-pointer"
+                                            fill
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110 cursor-pointer"
                                             onClick={() => setSelectedImage(image.id - 1)}
                                         />
                                     </div>
@@ -429,7 +433,7 @@ const StrategySection = () => {
                             <button
                                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                                 disabled={currentPage === 1}
-                                className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 disabled:opacity-50"
+                                className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 Previous
                             </button>
@@ -439,7 +443,7 @@ const StrategySection = () => {
                             <button
                                 onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                                 disabled={currentPage === totalPages}
-                                className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 disabled:opacity-50"
+                                className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 Next
                             </button>
@@ -458,14 +462,14 @@ const StrategySection = () => {
                             onClick={() => setSelectedImage(null)}
                         >
                             <button
-                                className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full"
+                                className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full z-10"
                                 onClick={() => setSelectedImage(null)}
                             >
                                 <X className="w-8 h-8" />
                             </button>
                             
                             <button
-                                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 hover:bg-white/10 rounded-full disabled:opacity-50"
+                                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 hover:bg-white/10 rounded-full z-10 disabled:opacity-50 disabled:cursor-not-allowed"
                                 onClick={(e) => { e.stopPropagation(); handlePrev(); }}
                                 disabled={selectedImage === 0}
                             >
@@ -473,36 +477,43 @@ const StrategySection = () => {
                             </button>
                             
                             <button
-                                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 hover:bg-white/10 rounded-full disabled:opacity-50"
+                                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 hover:bg-white/10 rounded-full z-10 disabled:opacity-50 disabled:cursor-not-allowed"
                                 onClick={(e) => { e.stopPropagation(); handleNext(); }}
                                 disabled={selectedImage === galleryImages.length - 1}
                             >
                                 <ChevronRight className="w-8 h-8" />
                             </button>
 
-                            <div className="relative max-w-5xl max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+                            <div className="relative max-w-5xl max-h-[90vh] w-full" onClick={(e) => e.stopPropagation()}>
                                 <motion.div
                                     key={selectedImage}
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
-                                    className="relative"
+                                    className="relative w-full h-full flex items-center justify-center"
                                 >
-                                    <Image
-                                        src={galleryImages[selectedImage].src}
-                                        alt={galleryImages[selectedImage].alt}
-                                        width={1200}
-                                        height={800}
-                                        className="max-h-[70vh] w-auto object-contain"
-                                    />
-                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                                        <h3 className="text-white text-xl font-bold mb-2">
-                                            {galleryImages[selectedImage].caption}
-                                        </h3>
-                                        <p className="text-gray-300">
-                                            {selectedImage + 1} of {galleryImages.length} • {galleryImages[selectedImage].category}
-                                        </p>
-                                    </div>
+                                    {selectedImage !== null && (
+                                        <>
+                                            <div className="relative w-full h-[70vh]">
+                                                <Image
+                                                    src={galleryImages[selectedImage].src}
+                                                    alt={galleryImages[selectedImage].alt}
+                                                    fill
+                                                    sizes="100vw"
+                                                    className="object-contain"
+                                                    priority
+                                                />
+                                            </div>
+                                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                                                <h3 className="text-white text-xl font-bold mb-2">
+                                                    {galleryImages[selectedImage].caption}
+                                                </h3>
+                                                <p className="text-gray-300">
+                                                    {selectedImage + 1} of {galleryImages.length} • {galleryImages[selectedImage].category}
+                                                </p>
+                                            </div>
+                                        </>
+                                    )}
                                 </motion.div>
                             </div>
                         </motion.div>
